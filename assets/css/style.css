@@ -74,6 +74,8 @@ p {
   margin:  0;
 }
 
+h1,
+h2
 h3 {
   color: var(--title-color);
   font-weight: var(--font-medium);
@@ -126,6 +128,7 @@ img {
   bottom: 0;
   left: 0;
   z-index: var(--z-fixed);
+  background-color: var(--body-color);
   box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
   transition: 0.3s;
 }
@@ -138,10 +141,16 @@ img {
 }
 
 .nav__logo,
-.nav__toggle {
+.nav__toggle {  
+  color: var(--title-color);
+  font-weight: var(--font-medium);
+}
+
+.nav__toggle {  
   font-size: 1.2rem;
   cursor: pointer;
 }
+
 
 .nav__list {
 
@@ -166,6 +175,9 @@ img {
   font-size: 1.2rem;
   margin-bottom: var(--mb-1);
 }
+
+/*MEDIA QUERIE QUE CONFORME O TAMANHO DA 
+TELA A SER VISUALIZADA VAI SENDO ALTERADA*/
 
 @media screen and (max-width: 968px) {
   .nav__menu {
@@ -230,7 +242,7 @@ img {
 
 /*SOCIAL*/
 .social__container { 
-  grid: max-content;
+  grid-template-columns: max-content;
   gap: 1rem;
 }
 
@@ -293,13 +305,158 @@ img {
   font-size: var(--h3-font-size);
 }
 
+.experience__description {
+  text-align: justify;
+}
+
+
+.experience__company,
 .education__studies {
   font-size: var(--small-font-size);
   color: var(--title-color);
 }
 
 .education__year { 
-  font-size: var(--smaller-font-size);
+  font-size: var(--small-font-size);
 }
 
 /*FIM SOCIAL AND EXPERIENCE*/
+
+/* skills */
+.skills__content { 
+  grid-template-columns:  repeat(2,1fr);
+  /*display: flex;
+  column-count: 2;
+  para que reflita o espaçamento de 1frame 
+  estilizar a ul e li  
+  */
+  gap:0;
+}
+
+.skills__name { 
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-3);
+}
+
+.skills__circle {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+/* fim skills*/ 
+
+/*CERTIFICATES*/
+
+.certificate__title { 
+  font-size: var(--h3-font-size);
+  margin-bottom: var(--mb-1);
+}
+
+.certificate__description {
+  text-align: justify;
+  text-indent: 1.5rem;
+}
+
+/*INTERESTS*/
+
+.interests__container {
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: var(--mb-2);
+}
+
+.interests__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.interests__icons {
+  font-size:  1.5rem;
+  color: blue;
+  margin-bottom: 0.25rem;
+}
+
+.interests__name {
+  text-align: center;
+}
+
+/*SCROLL*/
+
+
+.scrolltop {
+  position: fixed;
+  right: 1rem;
+  bottom: -20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+  background-color: red;
+  border-radius: 0.4rem;
+  z-index: var(--z-tooltip);
+  transition: 0.4s;
+  visibility: hidden;
+}
+
+.scrolltop__icon {
+  font-size: 20px;
+  color: fuchsia
+}
+
+
+
+
+
+/*ESTILISANDO OS RESUMOS ESQUERDA E DIREITA */
+@media screen and (min-width: 968px) {
+  body { 
+    margin: 3rem 0;
+  }
+
+  .bd-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .l-header,
+  .scrolltop {
+    display:none;
+  }
+
+  .resume {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    background-color: var(--container-color);
+    box-shadow: 0 0 8px blue
+  
+  }
+    
+  .resume__left { 
+    background-color: pink;
+  }
+  
+  .resume__left, 
+  .resume__right {
+    padding: 0 1.5rem;
+  }
+  
+  .section-title,
+  .profile__description {
+    text-align: initial;
+  }
+  
+  .home__container { 
+    gap: 1.5rem;
+  }
+  
+  .interests__container {
+    grid-template-columns: repeat(4, max-content);
+    column-gap: 3.5rem;
+  }
+
+}
