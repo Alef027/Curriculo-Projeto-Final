@@ -377,7 +377,7 @@ TELA A SER VISUALIZADA VAI SENDO ALTERADA*/
 
 .interests__icons {
   font-size:  1.5rem;
-  color: blue;
+  color: var(--text-color-light);
   margin-bottom: 0.25rem;
 }
 
@@ -405,7 +405,7 @@ TELA A SER VISUALIZADA VAI SENDO ALTERADA*/
 
 .scrolltop__icon {
   font-size: 20px;
-  color: fuchsia
+  color: rgb(0, 38, 255)
 }
 
 
@@ -437,7 +437,7 @@ TELA A SER VISUALIZADA VAI SENDO ALTERADA*/
   }
     
   .resume__left { 
-    background-color: pink;
+    background-color: var(--container-color-alt);
   }
   
   .resume__left, 
